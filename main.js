@@ -71,4 +71,12 @@
 
 
 //Ahorcado
+let teclado = document.getElementById('letras');
 let palabras = ['colibri', 'palmera', 'edificio', 'botella', 'javascript', 'talia']
+for (let i = 65; i <= 90; i++) {
+    const letra = String.fromCharCode(i);
+    const boton = document.createElement("button");
+    boton.textContent = letra;
+    boton.addEventListener("click", () => comprobarLetra(letra.toLowerCase(), boton));
+    teclado.appendChild(boton);
+  }

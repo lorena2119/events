@@ -9,8 +9,18 @@
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
+    background-image: url(img/fondo.webp);
+    background-position: center;
+    background-size: 200px;
+    background-repeat: repeat;
     margin-top: 2rem;
     height: 1800px;
+}
+h1{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #dd199c;
+    font-weight: 900;
 }
 span{
     font-weight: bold;
@@ -46,9 +56,37 @@ input{
     font-size: 50px;
     
 }
+.muneco{
+    position: absolute;
+    left: 52%;
+    top: 20px;
+    z-index: 10;
+}
 .stickman{
     padding: 0;
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
+}
+.palo{
+    width: 300px;
+    
+    z-index: 10;
+}
+.palo img{
+    width: 100%;
+}
+button{
+    background-color: #dd199c;
+    color: white;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#letras{
+    margin-top: 30px;
 }
