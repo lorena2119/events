@@ -13,21 +13,20 @@ body{
     background-position: center;
     background-size: 200px;
     background-repeat: repeat;
-    margin-top: 2rem;
     height: 1800px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 h1{
-    font-size: 3rem;
+    border: 1px inset #dd199c;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 4rem;
     margin-bottom: 2rem;
     color: #dd199c;
     font-weight: 900;
-}
-span{
-    font-weight: bold;
-}
-input{
-    padding: .3rem;
-    outline: none;
 }
 
 #btn{
@@ -58,8 +57,8 @@ input{
 }
 .muneco{
     position: absolute;
-    left: 52%;
-    top: 20px;
+    left: 60%;
+    top: 35px;
     z-index: 10;
 }
 .stickman{
@@ -71,7 +70,6 @@ input{
 }
 .palo{
     width: 300px;
-    
     z-index: 10;
 }
 .palo img{
@@ -84,9 +82,41 @@ button{
     height: 40px;
     margin: 5px;
     border: none;
+    font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
 }
+
+span{
+    border-bottom: 4px solid rgb(154, 6, 93);
+    width: 50px;
+    font-size: 50px;
+
+
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    gap: 10px;
+}
+.parte{
+    display: none;
+}
+#btn-reset{
+    position: fixed;
+    top: 1rem;
+    font-size: 50px;
+    font-weight: 800;
+    color: #dd199c;
+    right: 1rem;
+}
+
 #letras{
-    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
 }

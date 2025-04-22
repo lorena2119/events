@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahorcado</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <script src="main.js" type="module" defer></script>
 </head>
 <body>
@@ -22,20 +23,21 @@
     <!-- <p>Vamo' pa abajo ↓</p>
     <button id="btn">Vamo' pa arriba ↑</button> -->
     <h1>Ahorcado</h1>
+    <i class='bx bx-revision' id="btn-reset"></i>
     <section class="stickman">
         <div class="palo">
             <img src="img/palo.png" alt="">
         </div>
         <div class="muneco">
-            <div id="cabeza">O</div>
+            <div id="cabeza" class="parte">O</div>
             <div class="tronco">
-                <div id="brazo-derecho">/</div>
-                <div id="cuerpo">|</div>
-                <div id="brazo-izquierdo">\</div>
+                <div id="brazo-derecho" class="parte">/</div>
+                <div id="cuerpo" class="parte">|</div>
+                <div id="brazo-izquierdo" class="parte">\</div>
             </div>
             <div class="piernas">
-                <div id="pierna-derecha">/</div>
-                <div id="pierna-izquierda">\</div>
+                <div id="pierna-derecha" class="parte">/</div>
+                <div id="pierna-izquierda" class="parte">\</div>
             </div>
         </div>
     </section>

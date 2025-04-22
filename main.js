@@ -72,11 +72,62 @@
 
 //Ahorcado
 let teclado = document.getElementById('letras');
-let palabras = ['colibri', 'palmera', 'edificio', 'botella', 'javascript', 'talia']
-for (let i = 65; i <= 90; i++) {
-    const letra = String.fromCharCode(i);
-    const boton = document.createElement("button");
-    boton.textContent = letra;
-    boton.addEventListener("click", () => comprobarLetra(letra.toLowerCase(), boton));
-    teclado.appendChild(boton);
-  }
+let palabra = document.getElementById('palabra');
+let palabras = ['colibri', 'palmera', 'edificio', 'botella', 'javascript', 'talia', ]
+let partes = document.querySelectorAll(".parte");
+let restart = document.getElementById('btn-reset');
+console.log(partes);
+
+
+function generateWord() {
+    let random = Math.floor(Math.random() * palabras.length);
+    let word = palabras[random];
+    let countererrores = 0;
+    let maxErrores = 6;
+
+    for (let i = 0; i < word.length; i++) {
+        let letra = document.createElement("span");
+        letra.id = i;
+        palabra.appendChild(letra)
+    }
+    console.log(word);
+    for (let i = 65; i <= 90; i++) {
+        const letra = String.fromCharCode(i);
+        const boton = document.createElement("button");
+        boton.textContent = letra;
+        boton.addEventListener("click", () => comprobarLetra(letra.toLowerCase(), boton));
+        teclado.appendChild(boton);
+    }
+    function comprobarLetra(letra, boton) {
+        boton.disabled = true;
+        let acierto = false;
+        const spans = palabra.querySelectorAll("span");
+  
+        word.split("").forEach((letraPalabra, i) => {
+          if (letraPalabra === letra) {
+            spans[i].textContent = letra;
+            acierto = true;
+          }
+        });
+  
+        if (!acierto) {
+          partes[countererrores].style.display = "block";
+          countererrores++;
+          if (countererrores === maxErrores) {
+            alert("Se ahorcó");
+          }
+        }
+      }
+    
+}
+restart.addEventListener('click', ()=>{
+    teclado.innerHTML = '';
+    palabra.innerHTML = '';
+    partes.forEach(parte=>{
+        parte.style.display = 'none'
+    })
+    generateWord()
+})
+generateWord()
+
+
