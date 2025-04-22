@@ -118,8 +118,22 @@ function generateWord() {
           }
         }
       }
-    
 }
+document.addEventListener("keydown", manejarTecla);
+  function manejarTecla(e) {
+    const letra = e.key.toLowerCase();
+
+
+    if (letra.match(/^[a-z]$/)) {
+
+      const boton = Array.from(teclado.querySelectorAll("button"))
+        .find(b => b.textContent.toLowerCase() === letra && !b.disabled);
+
+      if (boton) {
+        boton.click(); 
+      }
+    }
+  }
 restart.addEventListener('click', ()=>{
     teclado.innerHTML = '';
     palabra.innerHTML = '';
